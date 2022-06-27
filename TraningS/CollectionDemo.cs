@@ -4,7 +4,7 @@ using System.Text;
 using System.Collections;
 namespace TraningS
 {
-    class CollectionDemo
+    class CollectionDemo4454
     {
         static void Main(string[] args)
         {
@@ -16,23 +16,23 @@ namespace TraningS
             al.Remove(43);
             al.Add("manohar");
             al.Add(5.5f);
-            foreach(object obj in al)
+            foreach (object obj in al)
             {
                 Console.WriteLine(obj);
             }
         }
     }
-  class ListDemo
+    class ListDemo
     {
         static void Main(string[] args)
         {
-            List < int > ll= new List<int>();
+            List<int> ll = new List<int>();
             ll.Add(43);
             ll.Add(56);
             ll.Add(33);
             ll.Add(22);
             //Type safe        ll.Add("manohar");
-            foreach (int ob in ll) 
+            foreach (int ob in ll)
             {
                 Console.WriteLine(ob);
             }
@@ -50,45 +50,39 @@ namespace TraningS
             st.Push("manasi");
             st.Push("madhuri");
             st.Push("Arohi");
+            
 
             foreach (string sd in st)
-            
+
                 Console.WriteLine(sd);
-            
-                string data = st.Pop();
-                Console.WriteLine("data Removed"+data);
 
-                Console.WriteLine("------------------------------------------");
+            string data = st.Pop();
+            Console.WriteLine("data Removed" + data);
 
-                foreach(object tt in st)
-                
-                    Console.WriteLine(tt);
+            Console.WriteLine("------------------------------------------");
+
+            foreach (object tt in st)
+
+                Console.WriteLine(tt);
 
 
         }
     }
-    class DictionaryDemo
-    {
-        static void Main(string[] args)
+   
+        class KinkedListDemo
         {
-            Dictionary<int, string> d1 = new Dictionary<int, string>();
-            d1.Add(101, "manohar");
-            d1.Add(102, "mansi");
-            d1.Add(103, "Arohi");
-            //to get value Corresponding to key
-            Console.WriteLine(d1[102]);
-            //Replace
-            d1[102] = "Anushka";
-            //Remove
-            d1.Remove(101);
-            foreach(KeyValuePair<int,string>kv in d1)
+            //allow duplicats
+            static void Main(string[] args)
             {
-                Console.WriteLine(kv.Key+"=>"+kv.Value);
+                LinkedList<int> lk = new LinkedList<int>();
+                lk.AddLast(50);
+                lk.AddFirst(70);
+               // lk.AddAfter(40);
+
             }
-            Console.WriteLine(d1.ContainsKey(101));
-            Console.WriteLine(d1.ContainsValue("makdk"));
-
         }
-    }
 
+    
 }
+
+

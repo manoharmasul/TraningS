@@ -79,7 +79,21 @@ namespace TraningS
 
         }
     }
-    class Exception3
+    //defining outr own Exception Classes
+    public class DivideByOddNoExceptin:ApplicationException
+    {
+        public override string Message
+        {
+            get
+            {
+                return "Attempted to divide by odd number.";
+
+
+            }
+        }
+    }
+  
+    class Exception5
     {
         static void Main(string[] args)
         {
@@ -88,7 +102,7 @@ namespace TraningS
             {
                 for (int i = 0; i <= arr.Length; i++)
                 {
-                    Console.WriteLine(arr[0]);
+                    Console.WriteLine(arr[i]);
                 }
             }
             catch(IndexOutOfRangeException e)
