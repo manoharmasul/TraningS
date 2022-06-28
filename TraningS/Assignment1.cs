@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
-using System;
-    
-
 namespace TraningS
 {
     //    Create class Teacher with following
@@ -235,86 +231,44 @@ namespace TraningS
 
     }
 
-    class Account12
-    {
-        public long accountNo;
-        public string CustomerName;
-        public double Balance;
-        public Account12()
-        {
-            CustomerName = "manohar";
-            accountNo = 986987890;
-            Balance = 7676.67;
-            Console.WriteLine("in Default Construcrtor");
-        }
-        public Account12(long accountNo, string CusomerName, double Balance)
-        {
-            this.accountNo = accountNo;
-            this.CustomerName = CustomerName;
-            this.Balance = Balance;
-            Console.WriteLine("in paraneterized constructor");
-        }
-        void depositeamount()
-        {
-
-        }
-        void withdraw()
-        {
-
-        }
-        void checkbalance()
-        {
-
-        }
-    }
-      class Task
-        {
-        static void Main(string[] args)
-        {
-            Account obj = new Account(888675768,"nansjf",6757698);
-        }
-
-        }
-
     class Account
     {
-        public long ACNo { get; set; }
-        public string CName { get; set; }
-        public float Balance { get; set; }
+        long ACNo;
+        string CName;
+        float Balance;
 
-        public Account()
+        public long ACNo1 { get => ACNo; set => ACNo = value; }
+        public string CName1 { get => CName; set => CName = value; }
+        public float Balance1 { get => Balance; set => Balance = value; }
+
+        public Account(long aCNo, string cName, float balance)
         {
-            ACNo = 8977877667;
-            CName = "Jayesh";
-            Balance = 89889.98f;
-            Console.WriteLine("In Default Constructor.");
+            ACNo1 = aCNo;
+            CName1 = cName;
+            Balance1 = balance;
         }
-        public Account(long ACNo, string CName, float Balance)
+
+
+        public void DepositedAmmount()
         {
-            this.ACNo = ACNo;
-           this.CName = CName;
-           this.Balance = Balance;
-            Console.WriteLine("In Parameterised Constructor");
+            Console.WriteLine("Deposited Ammount");
         }
-        public void DepositedAmmount(int DA)
+        public void Withdraw()
         {
-            Console.WriteLine(DA);
+            Console.WriteLine();
+            {
+                Console.WriteLine("Withedraw");
+            }
         }
-        public void Withdraw( int WD)
+        class AccountTest
         {
-            Console.WriteLine(WD);
-        }
-        public void CheckBalance()
-        {
-            Console.WriteLine(Balance);
-        }
-    }
-    class AccountTest
-    {
-        static void Main(string[] args)
-        {
-            Account obj = new Account();
-            
+            static void Main(string[] args)
+            {
+                Account obj = new Account(9788877667, "manohar", 7788.9f);
+
+
+            }
+
         }
 
     }

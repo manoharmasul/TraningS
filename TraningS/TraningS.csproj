@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>TraningS.TestStudd</StartupObject>
+    <StartupObject>TraningS.ArrayList_DuplicateR</StartupObject>
   </PropertyGroup>
 
 </Project>

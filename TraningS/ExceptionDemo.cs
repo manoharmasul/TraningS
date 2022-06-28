@@ -58,29 +58,7 @@ namespace TraningS
             Console.WriteLine("end program");
         }
     }
-
-   
-    class ExceptionDemo2
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Enter the value num1");
-            int num1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the value num2");
-            int num2 = int.Parse(Console.ReadLine());
-            if(num2%2>0)
-            {
-                throw new ApplicationException("Divisor value cannot be odd num");
-            }
-
-            int num = num1 / num2;
-            Console.WriteLine(num);
-
-
-        }
-    }
-    //defining outr own Exception Classes
-    public class DivideByOddNoExceptin:ApplicationException
+    public class DivideByOddNoExceptin : ApplicationException
     {
         public override string Message
         {
@@ -92,6 +70,52 @@ namespace TraningS
             }
         }
     }
+
+    class ExceptionDemo2
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the value num1");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the value num2");
+            int num2 = int.Parse(Console.ReadLine());
+
+            if (num2 % 2 > 0)
+            {
+                try
+                {
+                    //  throw new ApplicationException("Divisor value cannot be odd num");
+                    throw new DivideByOddNoExceptin();
+
+                }
+
+                catch (ApplicationException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+            else
+            {
+                int num = num1 / num2;
+                Console.WriteLine(num);
+            }
+
+        }
+    }
+    //defining outr own Exception Classes
+ /*   public class DivideByOddNoExceptin:ApplicationException
+    {
+        public override string Message
+        {
+            get
+            {
+                return "Attempted to divide by odd number.";
+
+
+            }
+        }
+    }*/
   
     class Exception5
     {
@@ -112,6 +136,29 @@ namespace TraningS
                
                 
             }
+        }
+    }
+    class ExceptionHadlingDemo
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Add();
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static void Add()
+        {
+            Console.WriteLine("Enter the Value x");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Value y");
+            int y = Convert.ToInt32(Console.ReadLine());
+            int z = x + y;
         }
     }
 
