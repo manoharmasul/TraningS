@@ -10,10 +10,10 @@ namespace TraningS
 
     class Methods
     {
-       
+
         public void Addnums(int a, int b)
         {
-            Console.WriteLine(a+b);
+            Console.WriteLine(a + b);
         }
         public static string Msg(string name)
         {
@@ -23,9 +23,9 @@ namespace TraningS
         {
             //call methods using instnace of the class 
 
-             Methods obj = new Methods();
+            Methods obj = new Methods();
             obj.Addnums(100, 50);
-             string str= Methods.Msg("Raju");
+            string str = Methods.Msg("Raju");
             Console.WriteLine(str);
             Console.WriteLine("///////////////////////////////////////");
             //call metthod using delegats
@@ -40,6 +40,86 @@ namespace TraningS
         }
     }
     //multicast Delegates delegate holds the refrence of more than one method
+    //similar return type and parameter
+    public delegate void RectDelegate(double Width, double Height);
+
+    class Rectangle
+    {
+        public void GetArea(double Width ,double Height )
+        {
+            Console.WriteLine(Width*Height);
+        }
+        public void GetPerimeter(double Width,double Height)
+        {
+            Console.WriteLine(2*(Width+Height));
+
+        }
+        static void Main(string[] args)
+        {
+           Rectangle re = new Rectangle();
+
+            RectDelegate obj = re.GetArea;
+            obj += re.GetPerimeter;
+            obj(11.25, 46.68);
+            //or
+            Console.WriteLine("//////////////////////////////////////////");
+            obj.Invoke(11.25, 46.68);
+        }
+    }
+
+    //in below we gate only one result 
+    //alsways dont use non value return methods 
+
+    public delegate double RectDelegate1(double Width, double Height);
+
+    class Rectangle1
+    {
+        public double GetArea(double Width, double Height)
+        {
+            return (Width * Height);
+        }
+        public double GetPerimeter(double Width, double Height)
+        {
+            return (2 * (Width + Height));
+
+        }
+        static void Main(string[] args)
+        {
+            Rectangle1 re = new Rectangle1();
+
+            RectDelegate1 obj = re.GetArea;
+            obj += re.GetPerimeter;
+            obj(11.25, 46.68);
+            //or
+            Console.WriteLine("//////////////////////////////////////////");
+            Console.WriteLine(obj.Invoke(11.25, 46.68));
+        }
+    }
+    //Anonymous Method 
+    //witout binding named method to the delegate//u can bind unnamed code block to delegate
+    //use when code voles are less
+    public delegate string GreetingDel(string name);
+    class AnonymousMethod
+    {
+        public static string  Greeting(string name)
+        {
+            return "hello"+ name;
+
+        }
+        static void Main(string[] args)
+        {
+            //GreetingDel obj = new GreetingDel(Greeting);
+            //Console.WriteLine(obj.Invoke("manya")); 
+            //Anonymous
+            GreetingDel obj = delegate (string name)
+              {
+                  return "hello " + name;
+              };
+            string str = obj.Invoke("manya");
+            Console.WriteLine(str);
+        }
+    }
+
     class Dellegate67
     {
         static int add(int a,float b)

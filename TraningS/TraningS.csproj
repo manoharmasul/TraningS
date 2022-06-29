@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>TraningS.Methods</StartupObject>
+    <StartupObject>TraningS.AnonymousMethod</StartupObject>
   </PropertyGroup>
 
 </Project>
