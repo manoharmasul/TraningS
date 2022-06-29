@@ -66,7 +66,6 @@ namespace TraningS
             {
                 return "Attempted to divide by odd number.";
 
-
             }
         }
     }

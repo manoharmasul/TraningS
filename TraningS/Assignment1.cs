@@ -172,21 +172,21 @@ namespace TraningS
         public double volume(double r)
         {
 
-            double vol = (4 / 3) * (22 / 7) * (r * r * r);
-            Console.WriteLine(vol);
-            return vol;
+
+
+            return (4 / 3) * (22 / 7) * (r * r * r);
         }
         public double volume(double h, double r)
         {
-            double vol = (22 / 7) * (r * r) * h;
-            Console.WriteLine(vol);
-            return vol;
+            
+           
+            return (22 / 7) * (r * r) * h;
         }
         public double volume(double l, double b, double h)
         {
-            double vol = l * b * h;
-            Console.WriteLine(vol);
-            return vol;
+              
+            
+            return l * b * h;
         }
     }
     class Printt
@@ -194,10 +194,10 @@ namespace TraningS
         static void Main(string[] args)
         {
             Volumet obj = new Volumet();
-            obj.volume(2.45);
-
-            obj.volume(23.22, 31.355);
-            obj.volume(2.5, 3.9, 8.9);
+          
+            Console.WriteLine("voume1="+obj.volume(2.45));
+            Console.WriteLine("volume2="+obj.volume(23.22, 31.355));
+            Console.WriteLine("volume2="+obj.volume(2.5, 3.9, 8.9));
 
         }
     }
@@ -209,7 +209,8 @@ namespace TraningS
         {
             Console.WriteLine("Area of circle is" + 3.14 * r * r);
         }
-        public void Area(int a)
+        public void
+            Area(int a)
         {
 
             Console.WriteLine("Area of Squre" + a * a);
@@ -237,16 +238,17 @@ namespace TraningS
         string CName;
         float Balance;
 
-        public long ACNo1 { get => ACNo; set => ACNo = value; }
-        public string CName1 { get => CName; set => CName = value; }
-        public float Balance1 { get => Balance; set => Balance = value; }
-
         public Account(long aCNo, string cName, float balance)
         {
             ACNo1 = aCNo;
             CName1 = cName;
             Balance1 = balance;
         }
+        public long ACNo1 { get => ACNo; set => ACNo = value; }
+        public string CName1 { get => CName; set => CName = value; }
+        public float Balance1 { get => Balance; set => Balance = value; }
+
+      
 
 
         public void DepositedAmmount()

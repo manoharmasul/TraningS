@@ -3,10 +3,78 @@ using System.Collections.Generic;
 using System.Text;
 namespace TraningS
 {
-    class OppConcepts
+    //overloding
+    class Numeric
     {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine("Addition =" + (a + b));
+        }
+        public void Add(int a, int b, int c)
+        {
+            Console.WriteLine("Addition =" + (a + b + c));
+        }
+        public int Add(int a, int b, int c, int d)
+        {
+            return a + b + c + d;
+        }
     }
-    //classes and objects
+    class Testttt
+    {
+        static void Main(string[] args)
+        {
+            Numeric obj = new Numeric();
+            Console.WriteLine("How Many No u Want to add");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            if (num == 2)
+            {
+                //  Numeric obj = new Numeric();
+                Console.WriteLine("Enter 1st No");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 2nd No");
+                int n2 = Convert.ToInt32(Console.ReadLine());
+                obj.Add(n1, n2);
+
+            }
+            else if (num == 3)
+            {
+                //Numeric obj=new 
+                Console.WriteLine("Enter 1st No");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 2nd No");
+                int n2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 3rd No");
+                int n3 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 4th No");
+                //int n4 = Convert.ToInt32(Console.ReadLine());
+                obj.Add(n1, n2, n3);
+
+            }
+            else if (num == 4)
+            {
+                Console.WriteLine("Enter 1st No");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 2nd No");
+                int n2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 3rd No");
+                int n3 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 4th No");
+                int n4 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(obj.Add(n1, n2, n3, n4));
+            }
+            else
+            {
+                Console.WriteLine("No must be beetween 2 to 4");
+            }
+
+
+        }
+    }
+    class OppBasicDemo
+  {
+    }
+       //classes and objects
     class Moblie
     {
         int Price;
@@ -137,6 +205,7 @@ class EncpsulationDemo
             obj.Mult();
         }
     }
+   
     //multiple inheritance
     interface AAA
     {
@@ -199,16 +268,16 @@ class EncpsulationDemo
     }
     class Ppp
     {
-        public void show()
+        public virtual void show()
         {
             Console.WriteLine("in Ppp");
         }
     }
     class Ccc:Ppp
     {
-        public void show()
+        public override void show()
         {
-            base.show();
+           
             Console.WriteLine("in Ccc");
         }
 
@@ -217,9 +286,12 @@ class EncpsulationDemo
     {
         static void Main(string[] args)
         {
-           
+            Ppp obj = new Ccc();
+            obj.show();
 
         }
     }
+   
+
 }
 

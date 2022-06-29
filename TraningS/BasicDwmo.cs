@@ -172,7 +172,7 @@ class Odd_sum
         }
     }
   //  Write a program to find sum of all odd numbers between 1 to n.
-class even_sum1
+    class even_sum1
     {
         public static void Main()
         {
