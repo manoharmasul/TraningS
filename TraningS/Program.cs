@@ -2,8 +2,6 @@
 
 namespace TraningS
 {
-<<<<<<< HEAD
-=======
     //    Create class Teacher with following
 
     //    Tid,Tname,MobileNo
@@ -24,7 +22,6 @@ namespace TraningS
 //    void salary()
 //Write main to create objects of HourlyBased teacher and SalaryBased teacher and also call respective salary method and also show runtime polymorphism
 
->>>>>>> 654b30e5553b67bbf1a346141080097ca7d0204b
 
     class Program
     {

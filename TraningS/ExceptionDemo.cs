@@ -58,7 +58,6 @@ namespace TraningS
             Console.WriteLine("end program");
         }
     }
-<<<<<<< HEAD
     public class DivideByOddNoExceptin : ApplicationException
     {
         public override string Message
@@ -70,23 +69,16 @@ namespace TraningS
             }
         }
     }
-
-    class ExceptionDemo2
-    {
-
-=======
-
    
     class ExceptionDemo2
     {
->>>>>>> 654b30e5553b67bbf1a346141080097ca7d0204b
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the value num1");
             int num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter the value num2");
             int num2 = int.Parse(Console.ReadLine());
-<<<<<<< HEAD
 
             if (num2 % 2 > 0)
             {
@@ -95,7 +87,7 @@ namespace TraningS
                     //  throw new ApplicationException("Divisor value cannot be odd num");
                     throw new DivideByOddNoExceptin();
 
-                }
+            }
 
                 catch (ApplicationException e)
                 {
@@ -104,8 +96,8 @@ namespace TraningS
             }
             else
             {
-                int num = num1 / num2;
-                Console.WriteLine(num);
+            int num = num1 / num2;
+            Console.WriteLine(num);
             }
 
         }
@@ -120,25 +112,11 @@ namespace TraningS
                 return "Attempted to divide by odd number.";
 
 
-            }
         }
+    }
     }*/
   
     class Exception5
-=======
-            if(num2%2>0)
-            {
-                throw new ApplicationException("Divisor value cannot be odd num");
-            }
-
-            int num = num1 / num2;
-            Console.WriteLine(num);
-
-
-        }
-    }
-    class Exception3
->>>>>>> 654b30e5553b67bbf1a346141080097ca7d0204b
     {
         static void Main(string[] args)
         {
@@ -147,11 +125,7 @@ namespace TraningS
             {
                 for (int i = 0; i <= arr.Length; i++)
                 {
-<<<<<<< HEAD
                     Console.WriteLine(arr[i]);
-=======
-                    Console.WriteLine(arr[0]);
->>>>>>> 654b30e5553b67bbf1a346141080097ca7d0204b
                 }
             }
             catch(IndexOutOfRangeException e)
@@ -163,7 +137,6 @@ namespace TraningS
             }
         }
     }
-<<<<<<< HEAD
     class ExceptionHadlingDemo
     {
         static void Main(string[] args)
@@ -187,7 +160,5 @@ namespace TraningS
             int z = x + y;
         }
     }
-=======
->>>>>>> 654b30e5553b67bbf1a346141080097ca7d0204b
 
 }
