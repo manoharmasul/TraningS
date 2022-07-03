@@ -35,6 +35,7 @@ namespace TraningS
             ht.Add("Dname","Sales");
             ht.Add("Location","pune");
             ht.Add("Age",22);
+           
             Console.WriteLine("Hello".GetHashCode());
             Console.WriteLine(ht["Email"]);
             foreach(object key in ht.Keys)
@@ -397,9 +398,11 @@ namespace TraningS
 
             foreach (int ob in ht.Keys)
             {
+                
                 if (ob % 3 == 0)
                 {
                     al.Add(ob);
+
                 }
             }
 

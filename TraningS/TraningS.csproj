@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>TraningS.ThreadingDemo</StartupObject>
+    <StartupObject>TraningS.ThreadDemo1</StartupObject>
   </PropertyGroup>
 
 </Project>

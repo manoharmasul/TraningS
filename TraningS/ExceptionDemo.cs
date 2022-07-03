@@ -89,7 +89,7 @@ namespace TraningS
 
             }
 
-                catch (ApplicationException e)
+                catch (DivideByOddNoExceptin e)
                 {
                     Console.WriteLine(e.Message);
                 }

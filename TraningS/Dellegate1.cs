@@ -89,23 +89,24 @@ namespace TraningS
 
             RectDelegate1 obj = re.GetArea;
             obj += re.GetPerimeter;
-            obj(11.25, 46.68);
+           double n= obj(11.25, 46.68);
+            Console.WriteLine(n);
             //or
             Console.WriteLine("//////////////////////////////////////////");
             Console.WriteLine(obj.Invoke(11.25, 46.68));
         }
     }
-    //Anonymous Method 
+    //Anonymous Method a method without a method body wich can be bound directly ton ur delegate and can be called 
     //witout binding named method to the delegate//u can bind unnamed code block to delegate
     //use when code voles are less
     public delegate string GreetingDel(string name);
     class AnonymousMethod
     {
-        public static string  Greeting(string name)
-        {
-            return "hello"+ name;
+        //public static string  Greeting(string name)
+        //{
+        //    return "hello"+ name;
 
-        }
+        //}
         static void Main(string[] args)
         {
             //GreetingDel obj = new GreetingDel(Greeting);
@@ -113,13 +114,37 @@ namespace TraningS
             //Anonymous
             GreetingDel obj = delegate (string name)
               {
-                  return "hello " + name;
+                 return "hello " + name;
               };
             string str = obj.Invoke("manya");
             Console.WriteLine(str);
         }
     }
+    /// <summary>
+    /// //////////////////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    /// lambda Expression is short hand for writing anonymous method
+    class LamdaEx
+    {
+        //public static string Greetings(string name)
 
+        //{
+        //    return "Hallo" + name + "good morning";
+        //}
+        static void Main(string[] args)
+        {
+            GreetingDel obj = (name) =>
+
+              {
+                  return "Hallo" + name + "good morning";
+              };
+            string str = obj.Invoke("manya");
+            Console.WriteLine(str);
+        }
+    }
+    //Func use when method return value
+    //Action when method have void 
+    //Predicate when we want return type boolean
     class Dellegate67
     {
         static int add(int a,float b)
@@ -150,6 +175,7 @@ namespace TraningS
 
         }
     }
+
     class AAAA
     {
         //static void filter (List<int> 1st,Predicate<int> p1)
@@ -180,4 +206,5 @@ namespace TraningS
 
         }
     }
+    //func 
 }

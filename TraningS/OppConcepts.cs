@@ -281,6 +281,7 @@ class EncpsulationDemo
             Console.WriteLine("in Ccc");
         }
 
+
     }
     class Mmmm
     {
@@ -291,7 +292,226 @@ class EncpsulationDemo
 
         }
     }
-   
+    /// <summary>
+    /// sealeas class Ex
+    /// </summary>
+    /// 
+    class sealedDemo
+    {
+
+    }
+    sealed class sealedEx:sealedDemo
+    {
+        public  void Add(int a, int b)
+        {
+            Console.WriteLine("Add"+(a+b));
+        }
+    }
+    class Normaal//:sealedEx//not possible because of sealed 
+    {
+        public  void Sub(int a,int b)
+        {
+            Console.WriteLine("sub "+(a-b));
+        }
+    }
+    class testingDD:Normaal
+    { 
+        public void Mult(int a,int b)
+        {
+            Console.WriteLine("mult"+(a*b));
+        }
+        static void Main(string[] args)
+        {
+            sealedEx obj = new sealedEx();
+            obj.Add(10, 3);
+            testingDD obj1= new testingDD();
+            obj1.Sub(50, 25);
+            obj1.Mult(6 ,6);
+           
+        }
+
+    }
+     class parent
+     {
+        public virtual void Add(int a, int b)
+        {
+            Console.WriteLine("P Add");
+        }
+        public virtual void sub(int a,int b)
+        {
+            Console.WriteLine("p sub");
+        }
+     }
+     class child:parent
+     {
+         sealed public override void Add(int a, int b)
+          {
+
+            Console.WriteLine("in child Add " );
+          }
+        public override void sub(int a,int b)
+        {
+            Console.WriteLine("in child sub");
+        }
+
+     }
+    class subchild :child
+    {
+        //override void Add(int a,int b)//not override
+        //{
+
+        //}
+      public override void sub(int a, int b)
+        {
+            Console.WriteLine("in sub child sub");
+        }
+    }
+    class tettt
+    { 
+        static void Main(string[] args)
+        {
+            Console.WriteLine("calling using parent ");
+            parent obj = new parent();
+            obj.Add(6, 8);
+            obj.Add(10 , 5);
+            Console.WriteLine("calling using child  ");
+            parent obj1 = new child();
+            obj1.Add(10, 29);
+            obj1.sub(30, 29);
+            Console.WriteLine("using sub child   ");
+            parent obj2 = new subchild();
+            obj2.sub(58, 8);
+            obj2.Add(89, 88);
+
+
+        }
+    }
+
+    class testingDD1: Normaal
+    {
+        public void Mult(int a, int b)
+        {
+            Console.WriteLine("mult" + (a * b));
+        }
+        static void Main(string[] args)
+        {
+            sealedEx obj = new sealedEx();
+            obj.Add(10, 3);
+            testingDD obj1 = new testingDD();
+            obj1.Sub(50, 25);
+            obj1.Mult(6, 6);
+
+        }
+
+    }
+
+    class constructorOverloading
+    {
+        public int Id;
+       public  string Name;
+        public constructorOverloading(int id,string name)
+        {
+            Id = id;
+            Name = name;
+            Console.WriteLine("in first constructor");
+        }
+        public constructorOverloading(string Name,int Id)
+        {
+           this. Name = Name;
+           this. Id = Id;
+            Console.WriteLine("in second Constructor");
+        }
+        public void show()
+        {
+            Console.WriteLine("Id " +Id+" Name "+Name) ;
+        }
+        
+    }
+    class demo
+    {
+        static void Main(string[] args)
+        {
+            constructorOverloading obj = new constructorOverloading(10, "manohar");
+            obj.show();
+            constructorOverloading obj1 = new constructorOverloading("Jayesh",11);
+            obj1.show();
+        }
+    }
+    class CoppyConstructor
+    {
+        string BookName;
+        int Code;
+        public CoppyConstructor(string BookName,int Code)
+            {
+          this.BookName = BookName;
+          this.Code = Code;
+            }
+        public CoppyConstructor(CoppyConstructor tech)
+        {
+            BookName = tech.BookName;
+            Code = tech.Code;
+        }
+        public string Getdata
+        {
+            get
+            { 
+                return "Name of the Book:"+BookName+" And Code is =>"+ Code.ToString();
+            }
+        }
+    }
+    class Stest
+    {
+        static void Main(string[] args)
+        {
+            CoppyConstructor obj1 = new CoppyConstructor("MasterC#", 101);
+            CoppyConstructor obj2 = new CoppyConstructor(obj1);
+           
+            Console.WriteLine(obj2.Getdata);
+
+        }
+    }
+    //privagte Construcostor.
+    class PrivateConstructorDD
+    {
+        PrivateConstructorDD() //by default private
+        {
+            Console.WriteLine("in private Constructor ");
+        }
+    }
+    class privareCtest
+    {
+        static void Main(string[] args)
+        {
+           // PrivateConstructorDD obj = new PrivateConstructorDD();  
+            //if parameterise constructor is not present
+
+        }
+    }
+    class privateCDemo
+    {
+        public static int id;
+        public static string name;
+       privateCDemo()
+        {
+            Console.WriteLine("in privatre constructor");
+        }
+        public privateCDemo(int Id ,string Name)
+        {
+            id = Id;
+            name = Name;
+            Console.WriteLine("in parameterized constrctor");
+        }
+    }
+    class privareCtestDemo
+    {
+        static void Main(string[] args)
+        {
+            // privateCDemo obj = new privateCDemo();//shows Eror
+
+            privateCDemo obj = new privateCDemo(101, "mansi");
+            Console.WriteLine(privateCDemo.name+" "+privateCDemo.id);
+        }
+    }
 
 }
 

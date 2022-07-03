@@ -22,7 +22,7 @@ namespace TraningS
             }
         }
     }
-  class ListDemo
+  class ListDemo2
     {
         static void Main(string[] args)
         {
@@ -56,6 +56,7 @@ namespace TraningS
                 Console.WriteLine(sd);
             
                 string data = st.Pop();
+
                 Console.WriteLine("data Removed"+data);
 
                 Console.WriteLine("------------------------------------------");
@@ -87,6 +88,85 @@ namespace TraningS
             }
             Console.WriteLine(d1.ContainsKey(101));
             Console.WriteLine(d1.ContainsValue("makdk"));
+
+        }
+    }
+    class ArrayLD
+    {
+        static void Main(string[] args)
+        {
+            ArrayList al = new ArrayList();
+            al.Add(11);
+            al.Add("Manohari");
+            al.Add("Mansi");
+            al.Add("Vidya");
+            al.Add(86.00);
+            al.Add("Raghav");
+
+            //  al.Insert(3, "Priya");//incert the new item
+            // al.Remove("Manohari");//remove using object 
+            //  al.RemoveAt(2);//remove using index 
+            //  al.RemoveRange(0, 2);//remove the range
+            //al.Sort();
+            int x = al.Count;
+            Console.WriteLine( x);
+            foreach(object obj in al)
+                Console.WriteLine(obj);
+        }
+    }
+    class HashTableHH
+    {
+        static void Main(string[] args)
+        {
+            Hashtable ht =new  Hashtable();
+            ht.Add("id", 101);
+            ht.Add("Ename", "Manohari");
+        //    ht.Add("id", 101);duplicates not allowed
+            ht.Add("Email", "manohari@gmail.com");
+            // string name = ht["Ename"].ToString(); //return value of key
+            // Console.WriteLine(name);
+            ht.Remove("Email");
+
+
+            foreach(DictionaryEntry d in ht)
+                Console.WriteLine(d.Key+" "+d.Value);
+
+        }
+    }
+     class SortedListDD
+    {
+        static void Main(string[] args)
+        {
+            SortedList sl = new SortedList();
+            sl.Add("name","Manohar"); ;
+            sl.Add("id", 89);
+            sl.Add("Email", "manoharmasul@gmail.com");
+            sl.Add("Rank",101);
+            //sl.Add("Rank", 89);duplicats not allowed
+            Console.WriteLine("Soreted Contains"+ sl.ContainsKey("id")+"  contains  value" + sl.ContainsValue("Manohar"));
+            foreach(DictionaryEntry obj in sl)
+
+                Console.WriteLine(obj.Key+" "+obj.Value);
+             //   Console.WriteLine(obj.Key);
+            
+
+        }
+    }
+    class SortedList22
+    {
+        static void Main(string[] args)
+        {
+            SortedList<int, string> sl= new SortedList<int,string>();
+            sl.Add(1, "manohar");
+            sl.Add(2, "yogi");
+            sl.Add(3, "sambhaji");
+            sl.Add(4, "babu");
+            //sl.Remove(3);
+            sl.IndexOfKey(3);
+            foreach(KeyValuePair<int,string> ob in sl)
+                Console.WriteLine(ob.Key+" "+ob.Value);
+
+
 
         }
     }
