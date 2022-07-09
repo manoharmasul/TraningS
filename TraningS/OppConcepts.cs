@@ -512,6 +512,75 @@ class EncpsulationDemo
             Console.WriteLine(privateCDemo.name+" "+privateCDemo.id);
         }
     }
+   //static constructor a constrctor is explicitly declared by using static modifire 
+   //we can call that constructors as static constructors
+   //static fields are initialized by static constructor 
+   //static constructors are implicitly called
+   //static constructors executes is execution of class starts
+   //static constructors only one time
+   class StaticCdemo
+    {
+        static int x;
+        int y;
 
+        static StaticCdemo()
+        {
+            Console.WriteLine("in static constructor ");
+        }
+        public StaticCdemo(int a )
+        {
+           
+            y = a;
+            Console.WriteLine("in default constructor");
+        }
+        static void Main(string[] args)
+        {
+          //  StaticCdemo obj = new StaticCdemo(88);
+          //  Console.WriteLine(obj.y);
+          //  obj.y = 50;
+            
+        }
+    }
+    //different kinds of variebles in a class 
+    //non static  ,static ,constant and radonly
+    //constatant :-if a variables is declared by using the keyword "cons" we call it as a 
+    //constant variable and these constant variables can't be modified once after their declaration
+    //so its must to initialize constant at time of declaration only
+    //the bihaviour of const variable is similarly as the static variables that is initialized only one time
+    //in life cycle of a class and dosent require instance 
+    //static variables can be modified but con not be modified
+
+    //readonly :-if variable is declared using the read only keaword
+    
+    /// /these variables cant not be modified like cont but after initialization
+    /// its not compulsory toninitialize a readolny variable at the time of declaration,they can also 
+    /// be initialized under the constructor 
+    /// differce between const and read only is that 
+    /// coant is single coppy for the whole class readonly coppy for each instat//instance  variables camodified
+   
+    class redonlyandcontDemo
+    {
+        int x;
+        static int y=200;
+
+        const float pi=3.14f;
+        readonly bool flag;
+        public redonlyandcontDemo(int x ,bool flag)
+        {
+            this.x = x;
+            this.flag = true;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(y);
+            Console.WriteLine(pi);
+            redonlyandcontDemo p1 = new redonlyandcontDemo(89, true);
+            redonlyandcontDemo p2 = new redonlyandcontDemo(99, false);
+            p1.x = 500;
+           // p1.flag = false;//not possible
+
+        }
+    }
+ 
 }
 

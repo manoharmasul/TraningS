@@ -121,7 +121,8 @@ namespace TraningS
             Hashtable ht =new  Hashtable();
             ht.Add("id", 101);
             ht.Add("Ename", "Manohari");
-        //    ht.Add("id", 101);duplicates not allowed
+            
+           // ht.Add("id", 101);
             ht.Add("Email", "manohari@gmail.com");
             // string name = ht["Ename"].ToString(); //return value of key
             // Console.WriteLine(name);
@@ -142,7 +143,7 @@ namespace TraningS
             sl.Add("id", 89);
             sl.Add("Email", "manoharmasul@gmail.com");
             sl.Add("Rank",101);
-            //sl.Add("Rank", 89);duplicats not allowed
+            
             Console.WriteLine("Soreted Contains"+ sl.ContainsKey("id")+"  contains  value" + sl.ContainsValue("Manohar"));
             foreach(DictionaryEntry obj in sl)
 

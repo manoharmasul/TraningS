@@ -77,7 +77,7 @@ namespace TraningS
             d1.Add(101, "manohar");
             d1.Add(102, "mansi");
             d1.Add(103, "Arohi");
-            d1.Add(103, "Jadhav"); //Duplicate allowed
+            
             //to get value Corresponding to key
             Console.WriteLine(d1[102]);
             //Replace
